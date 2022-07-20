@@ -25,3 +25,13 @@
     function smallestElement(arr){
       return arr.reduce((el1, el2)=> el1>el2? el2 : el1, arr.at(0));
     }
+    
+### Week 1 - Thursday
+
+*Odd or Even?*
+    
+    function oddOrEven(array) {
+      if(array.length === 0) return 'even';
+      let sum = array.reduce((el1, el2)=> el1+el2, 0);
+      return sum%2===0?'even':'odd';
+    }
