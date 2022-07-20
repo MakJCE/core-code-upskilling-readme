@@ -10,12 +10,10 @@
 
     }
 
-### Week 1 - Tuesday
-
 *Reverse Words*
 
-        function reverseWords(str){
+    function reverseWords(str){
 
-          return str.split(' ').reverse().join(' '); // reverse those words
+      return str.split(' ').reverse().join(' ');
 
-        }
+    }
