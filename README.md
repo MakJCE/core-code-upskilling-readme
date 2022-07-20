@@ -17,3 +17,11 @@
       return str.split(' ').reverse().join(' ');
 
     }
+    
+### Week 1 - Wednesday
+
+*Find the smallest integer in the array*
+
+    function smallestElement(arr){
+      return arr.reduce((el1, el2)=> el1>el2? el2 : el1, arr.at(0));
+    }
