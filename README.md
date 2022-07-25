@@ -35,3 +35,12 @@
       let sum = array.reduce((el1, el2)=> el1+el2, 0);
       return sum%2===0?'even':'odd';
     }
+
+### Week 2 - Monday
+
+*Palindrome Strings*
+    
+    function isPalindrome(line) {
+      if(typeof line === 'number') line = line.toString();
+      return line === line.split('').reverse().join('');
+    }
