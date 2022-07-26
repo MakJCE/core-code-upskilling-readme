@@ -43,4 +43,11 @@
     function isPalindrome(line) {
       if(typeof line === 'number') line = line.toString();
       return line === line.split('').reverse().join('');
+    }    
+
+### Week 2 - Tuesday
+
+    function well(x){
+      var countGoods = x.reduce((el1, el2)=>(el2==='good')?el1+1:el1, 0);
+      return countGoods===0? 'Fail!' : countGoods < 3? 'Publish!' : 'I smell a series!';
     }
