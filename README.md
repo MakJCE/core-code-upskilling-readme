@@ -47,7 +47,37 @@
 
 ### Week 2 - Tuesday
 
+*Well of Ideas - Easy Version*
+
     function well(x){
       var countGoods = x.reduce((el1, el2)=>(el2==='good')?el1+1:el1, 0);
       return countGoods===0? 'Fail!' : countGoods < 3? 'Publish!' : 'I smell a series!';
+    }
+
+### Week 2 - Wednesday
+
+*Managing Events in React JS*
+
+    import React from 'react';
+
+    export class Counter extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {counter: 0};
+      }
+
+      // Your event handlers 
+      render() {
+        return (
+          <div>
+            <h1 id="counter">{this.state.counter}</h1>
+              <button type="button" id="decrement" onClick={()=>{this.state.counter -= 1;}}>
+                Decrement
+              </button>
+              <button type="button" id="increment" onClick={()=>{this.state.counter += 1;}}>
+                Increment
+              </button>
+          </div>
+        )
+      }
     }
