@@ -81,3 +81,41 @@
         )
       }
     }
+
+### Week 2 - Thursday
+
+*Santa wish list form in ReactJS*
+
+    const React = require("react");
+
+    class WishlistForm extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {wish:'', name:'', priority:1};
+      }
+
+      render() {
+        const handleSubmit = (event)=>{
+          this.props.send(this.state);
+          event.preventDefault();
+        }
+        const handleOnChange = (event, key) =>{
+          this.state[key] = event.target.value;
+        }
+        return (
+          <form >
+            <input id="name" name="name" type="text" onChange={(event)=>handleOnChange(event, 'name')}/>
+            <textarea id="wish" name="wish" onChange={(event)=>handleOnChange(event, 'wish')}></textarea>
+            <select id="priority" name="priority" value={1} onChange={(event)=>handleOnChange(event, 'priority')}>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
+            <input type="submit" value="Submit"/>
+          </form>
+        );
+      }
+    };
+
