@@ -150,3 +150,41 @@
     let BasicModel=(props)=>{return withPriceModel(PcDisplay, 'basic')(props)};
 
     let ProModel=(props)=>{return withPriceModel(PcDisplay, 'pro')(props)};
+    
+### Week 3 - Monday
+
+*Search filter in React*
+
+    function SearchList() {
+      const defaultList = [
+        "Banana",
+        "Apple",
+        "Orange",
+        "Mango",
+        "Pineapple",
+        "Watermelon",
+      ];
+
+      const [list, setList] = useState(defaultList);
+
+      const handleSearch = (event) => {
+        if (event.target.value === "") {
+          setList(defaultList);
+          return;
+        }
+        setList(defaultList.filter( (item) => item.toLowerCase().includes(event.target.value) );
+      };
+      return (
+        <div className="app">
+          <div>
+            Search: <input name="query" type="text" onChange={handleSearch} />
+          </div>
+          {list &&
+            list.map((item) => (
+              <div>{item}</div>
+            ))}
+        </div>
+      );
+    }
+
+    export default SearchList;
