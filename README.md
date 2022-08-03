@@ -188,3 +188,50 @@
     }
 
     export default SearchList;
+
+### Week 3 - Tuesday
+
+*Fetch Random User Data*
+
+    import React, { useState, useEffect } from 'react';
+
+    function RandomUser() {
+      const [userData, setUserData] = useState({});
+
+      const getUserData = () => {
+        const random = Math.floor(Math.random() * 10) + 1;
+        fetch(`https://jsonplaceholder.typicode.com/users/${random}`)
+          .then((response) => {
+            response.json().then(jsonResponse => {setUserData(jsonResponse);})
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
+
+      useEffect(() => {
+        getUserData();
+      }, []);
+
+      return (
+        <div className="App">
+          <button onClick={getUserData}>Reset</button>
+          <h1>User Data</h1>
+
+          <div>
+            <b>Name:</b> {userData.name}
+          </div>
+          <div>
+            <b>Website:</b> {userData.website}
+          </div>
+          <div>
+            <b>Email:</b> {userData.email}
+          </div>
+          <div>
+            <b>Phone:</b> {userData.phone}
+          </div>
+        </div>
+      );
+    }
+
+    export default RandomUser;
