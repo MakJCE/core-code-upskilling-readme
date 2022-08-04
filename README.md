@@ -250,23 +250,23 @@
       </BrowserRoute>
     );
     
-    //app.js
+    //App.js
     export default function App() {
       const [blogs, setBlogs] = useState([]);
       useEffect(() => {
-        fetch("https://api.hubapi.com/content/api/v2/blog-posts?hapikey=demo")
+        fetch("blogs.json")
           .then((response) => {
-            setBlogs(response);
+            response.text();
           })
-          .catch((error) => {
-            console.log(error);
+          .then((resp) => {
+            setBlogs(JSON.parse(resp));
           });
       }, []);
       return (
         <div className="App">
           <h1>Most Awesome Blogs</h1>
           {blogs.map((blog) => {
-            return <Link to={blog.id}>{blog.name}</Link>;
+            return <Link to={blog.id}>{blog.title}</Link>;
           })}
         </div>
       );
@@ -275,10 +275,16 @@
     //Blog.js
     const Blog=()=>{
       const {id} = useParams();
-      const [blog, setBlogs] = useState();
-      useEffect(()=>{
-        fetch(`link/${id}`).then(response=>setBlogs(response))
-      },[])
+      const [blog, setBlog] = useState();
+      useEffect(() => {
+        fetch(`blogs.json`)
+        .then(response => response.text())
+        .then(data => {
+            data = JSON.parse(data);
+            console.log(data);
+            setBlog(data.find(b=> b.id === id));
+        });
+      }, [id]);
       return(
         <div>
           <h1>{blog.title}</h1>
