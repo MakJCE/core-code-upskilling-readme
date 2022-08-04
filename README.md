@@ -235,3 +235,55 @@
     }
 
     export default RandomUser;
+
+### Week 3 - Wednesday
+
+*React Router Blog*
+
+    //index.js
+    root.render(
+      <BrowserRoute>
+        <Routes>
+          <Route path="/" element={<App />}/>
+          <Route path="/:id" element={<Blog />}/>
+        </Routes>
+      </BrowserRoute>
+    );
+    
+    //app.js
+    export default function App() {
+      const [blogs, setBlogs] = useState([]);
+      useEffect(() => {
+        fetch("https://api.hubapi.com/content/api/v2/blog-posts?hapikey=demo")
+          .then((response) => {
+            setBlogs(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }, []);
+      return (
+        <div className="App">
+          <h1>Most Awesome Blogs</h1>
+          {blogs.map((blog) => {
+            return <Link to={blog.id}>{blog.name}</Link>;
+          })}
+        </div>
+      );
+    }
+    
+    //Blog.js
+    const Blog=()=>{
+      const {id} = useParams();
+      const [blog, setBlogs] = useState();
+      useEffect(()=>{
+        fetch(`link/${id}`).then(response=>setBlogs(response))
+      },[])
+      return(
+        <div>
+          <h1>{blog.title}</h1>
+          <p>{blog.content}</p>
+          <p>{blog.author}</p>
+        </div>
+      );
+    }
