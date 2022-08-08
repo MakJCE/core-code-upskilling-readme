@@ -293,3 +293,17 @@
         </div>
       );
     }
+
+### Week 4 - Moonday
+
+*Two to One*
+
+    function longest(s1, s2) {
+      let setOfList = new Set(s1.concat(s2).split(''))
+      let sortedList = Array.from(setOfList).sort((a,b)=>{
+        if(a<b) return -1;
+        if(a>b) return 1;
+        return 0;
+      });
+      return (sortedList.join(''));
+    }
