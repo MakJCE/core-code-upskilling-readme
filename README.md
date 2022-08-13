@@ -325,3 +325,23 @@
       }
       return false;
     }
+
+### Week 4 - Wednesday
+
+*Maximum Length Difference*
+
+     function mxdiflg(a1, a2) {
+        if(a1.length===0 || a2.length===0) return -1;
+        const maxAndMin = (s1,s2, operation)=>{ 
+         if(operation==='max') 
+           return(s1.length>s2.length)?s1:s2; 
+         return(s1.length<s2.length)?s1:s2;
+        };
+        const findMaxMinLength = 
+              (arr)=> arr.reduce(
+                (e1,e2)=>[maxAndMin(e1[0], e2, 'max'), maxAndMin(e1[1], e2, 'min')]
+              , [arr[0], arr[0]]);
+        const [maxa1, mina1] = findMaxMinLength(a1);
+        const [maxa2, mina2] = findMaxMinLength(a2);
+        return Math.max(maxa1.length-mina2.length , maxa2.length-mina1.length);
+    }
