@@ -345,3 +345,21 @@
         const [maxa2, mina2] = findMaxMinLength(a2);
         return Math.max(maxa1.length-mina2.length , maxa2.length-mina1.length);
     }
+
+### Week 4 - Thursday
+
+*Base64 Numeric Translator*
+
+    function base64toBase10(base64) {
+      const sequence = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+      const digits = {};
+      for(let i in sequence.split('')){
+        digits[sequence[i]] = parseInt(i);
+      }
+      var resp=0;
+      const reverseBase64 = base64.split('').reverse();
+      for(let i in reverseBase64) {
+        resp+=digits[reverseBase64[i]]*Math.pow(64,i);
+      }
+      return resp;
+    }
