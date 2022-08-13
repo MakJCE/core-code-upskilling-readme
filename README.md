@@ -307,3 +307,21 @@
       });
       return (sortedList.join(''));
     }
+
+### Week 4 - Tuesday
+
+*Leap Day*
+
+     function isLeapYear(year) {
+      const div4 = year%4 === 0;
+      const div100 = year%100 === 0;
+      const div400 = year%400 === 0;
+      if (div4){
+        if(div100){
+          if(div400) return true;
+          return false;
+        }
+        return true;
+      }
+      return false;
+    }
