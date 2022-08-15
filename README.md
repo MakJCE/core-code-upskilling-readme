@@ -363,3 +363,17 @@
       }
       return resp;
     }
+
+### Week 5 - Monday
+
+*Fun with lists: map*
+
+    function map(head, f) {
+      if(!head) return null;
+      var newHead = head;
+      while (!!newHead){
+        newHead.data = f(newHead.data);
+        newHead=newHead.next;
+      }
+      return head;
+    }
