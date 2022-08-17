@@ -377,3 +377,23 @@
       }
       return head;
     }
+    
+### Week 5 - Tuesday
+
+*Separating String*
+
+    function sepStr(str) {
+      var resp = [];
+      var words = str.split(' ');
+      var rows = words.reduce((w1,w2)=>w1.length>w2.length?w1:w2).length;
+      var cols = words.length;
+      let row = 0;
+      while( row < rows){
+        resp.push([]);
+        for(let word of words){
+          resp[row].push(word[row] || '');
+        }
+        row+=1;
+      }
+      return resp;
+    }
