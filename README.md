@@ -397,6 +397,7 @@
       }
       return resp;
     }
+    
 ### Week 5 - Wednesday
 
 *Highest Scoring Word*
@@ -406,4 +407,18 @@
         return word.split('').reduce((total,ls)=> total+(ls.charCodeAt(0)-96),0);
       }
       return x.split(' ').reduce((w1, w2)=> (getScore(w1)>=getScore(w2))?w1:w2);
+    }
+
+### Week 5 - Thursday
+
+*Where Is My Parent?*
+
+    function findChildren(dancingBrigade) {
+        return dancingBrigade.split('').sort((a,b)=>{
+        let code1 = a.charCodeAt(0);
+        code1 = code1<97? code1 + 31.5 : code1;
+        let code2 = b.charCodeAt(0);
+        code2 = code2<97? code2 + 31.5 : code2;
+        return code1-code2;
+      }).join('');
     }
