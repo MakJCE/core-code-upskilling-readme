@@ -397,3 +397,13 @@
       }
       return resp;
     }
+### Week 5 - Wednesday
+
+*Highest Scoring Word*
+
+    function high(x){
+      const getScore = (word)=>{
+        return word.split('').reduce((total,ls)=> total+(ls.charCodeAt(0)-96),0);
+      }
+      return x.split(' ').reduce((w1, w2)=> (getScore(w1)>=getScore(w2))?w1:w2);
+    }
