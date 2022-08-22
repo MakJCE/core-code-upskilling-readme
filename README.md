@@ -422,3 +422,15 @@
         return code1-code2;
       }).join('');
     }
+
+### Week 6 - Monday
+
+*Expressions Matters*
+
+    SELECT CASE 
+    WHEN (a=1) AND (c=1) THEN a + b + c
+    WHEN (a=1) OR ((b=1) AND (a < c)) THEN (a + b) * c
+    WHEN (c=1) OR ((b=1) AND (a>=c)) THEN a * (b + c)
+    ELSE a*b*c
+    END AS res
+    FROM expression_matter;
