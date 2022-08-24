@@ -434,3 +434,34 @@
     ELSE a*b*c
     END AS res
     FROM expression_matter;
+
+### Week 6 - Tuesday
+
+*Sudoku Solution Validator*
+
+    function validSolution(board){
+      var digits = [];
+      for(let i=0; i<10; i++){digits.push({rows: new Set(), cols: new Set()})}
+
+      for(let i in board){
+        for(let j in board[i]){
+          if(digits[board[i][j]]){
+           digits[board[i][j]].rows.add(i);
+           digits[board[i][j]].cols.add(j);
+          }
+        }
+      }
+      var resp = true;
+      if(!!digits[0] && (digits[0].rows.size >0 || digits[0].cols.size > 0)) return false;
+      for(let i=1; i<10; i++){
+        let dig = digits[i];
+        if(dig){
+         if(dig.rows.size !== 9 || dig.cols.size !== 9){
+            resp = false;
+            break;
+            }
+        }
+      }
+      return resp;
+    }
+
