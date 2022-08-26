@@ -474,3 +474,9 @@
     ELSE 'Odd'
     END AS is_even
     FROM numbers;
+
+### Week 6 - Thursday
+
+*Returning Strings*
+
+    SELECT format('Hello, %s how are you doing today?', name) as greeting FROM person
