@@ -480,3 +480,17 @@
 *Returning Strings*
 
     SELECT format('Hello, %s how are you doing today?', name) as greeting FROM person
+
+### Week 7 - Monday
+
+*Simple NULL handling*
+
+    SELECT 
+    id, 
+    CASE WHEN name = '' THEN COALESCE('[product name not found]') ELSE name END as name,
+    price,
+    CASE WHEN card_name = '' THEN NULLIF('[card name not found]','') ELSE card_name END as card_name,
+    card_number, 
+    transaction_date 
+    FROM eusales
+    WHERE price >= 50
