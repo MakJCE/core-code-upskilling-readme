@@ -494,3 +494,19 @@
     transaction_date 
     FROM eusales
     WHERE price >= 50
+
+### Week 7 - Tuesday
+
+*The takeWhile Function*
+
+    function takeWhile (arr, pred) {
+      let validPred = true;
+      return arr.reduce((one, two)=>{
+        if(validPred){
+          validPred = pred(two);
+          return validPred? [...one, two]: one;
+        }else{
+          return one;
+        }
+      }, [])
+    }
