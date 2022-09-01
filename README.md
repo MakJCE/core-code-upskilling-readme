@@ -510,3 +510,20 @@
         }
       }, [])
     }
+
+### Week 7 - Wednesday
+
+*The Supermarket Queue*
+
+    function queueTime(customers, n) {
+      if(customers.length === 0) return 0;
+      var queues = customers.slice(0,n);
+      let rest = customers.slice(n, customers.length);
+      for(let c of rest){
+        queues.sort();
+        queues[0]+=c;
+      }
+      queues.sort();
+      return queues[queues.length-1];
+    }
+    
