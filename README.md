@@ -527,3 +527,15 @@
       return queues[queues.length-1];
     }
     
+### Week 7 - Thursday
+
+*Sum Of Digits / Digital Root*
+
+    function digitalRoot(n) {
+      var fun = (cad)=>cad.reduce((uno,dos)=>parseInt(uno)+parseInt(dos), 0);
+      var sn = String(n);
+      var suma = fun(sn.split(''));
+      if(String(suma).length === 1) return suma;
+      return digitalRoot(suma);
+    }
+
