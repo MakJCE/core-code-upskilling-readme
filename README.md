@@ -538,4 +538,43 @@
       if(String(suma).length === 1) return suma;
       return digitalRoot(suma);
     }
+    
+### Week 8 - Links not working
+
+### Week 9 - Monday
+
+*Install a Kubernetes Local Cluster*
+
+I've installed Docker Desktop
+
+![alt text](https://i.ibb.co/jytzjNL/temp.png)
+
+
+### Week 9 - Tuesday
+
+![alt text](https://i.ibb.co/qpdhSs2/temp.png)
+
+
+### Week 9 - Wednesday
+
+![alt text](https://i.ibb.co/mRXwCFL/temp.png)
+
+![alt text](https://i.ibb.co/5n6hdBw/temp.png)
+
+
+### Week 9 - Thursday
+
+![alt text](https://i.ibb.co/Dfzndz4/temp.png)
+
+![alt text](https://i.ibb.co/n3d5TX6/temp.png)
+
+
+### Week 10 - Monday 
+
+*How to use the Google Cloud Free Program*
+
+![alt text](https://i.ibb.co/WyF5pNw/temp.png)
+
+
+### Week 10 - Tuesday - Not working links
 
